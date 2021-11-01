@@ -7,6 +7,10 @@ app = Flask(__name__)
 def hello():
     return "Welcome to the playground!"
 
+@app.route('/play')
+def play(num):
+    return render_template("index.html", num=0)
+
 @app.route('/play/<int:num>/<string:color>')
 def playground(num, color):
     return render_template("index.html", times=num, color=color)
