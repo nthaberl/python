@@ -1,0 +1,74 @@
+SELECT * FROM dojos;
+SELECT * FROM ninjas;
+SET SQL_SAFE_UPDATES = 0;
+
+-- Query: Create 3 new dojos
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("Mountain Dojo", NOW(), NOW());
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("River Dojo", NOW(), NOW());
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("Thunder Dojo", NOW(), NOW());
+
+-- Query: Delete the 3 dojos you just created
+DELETE FROM dojos;
+
+-- Query: Create 3 more dojos
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("Fire Dojo", NOW(), NOW());
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("Wind Dojo", NOW(), NOW());
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUES ("Forest Dojo", NOW(), NOW());
+
+-- Query: Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Ace", "Shinobi", 12, NOW(), NOW(), 10);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Base", "Shinobi", 9, NOW(), NOW(), 10);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Chase", "Shinobi", 15, NOW(), NOW(), 10);
+
+-- Query: Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Rain", "Ninja", 25, NOW(), NOW(), 11);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Sun", "Ninja", 41, NOW(), NOW(), 11);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Cloud", "Ninja", 17, NOW(), NOW(), 11);
+
+-- Query: Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Ace", "Kunoichi", 19, NOW(), NOW(), 12);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Base", "Kunoichi", 30, NOW(), NOW(), 12);
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ("Chase", "Kunoichi", 75, NOW(), NOW(), 12);
+
+-- Query: Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas
+WHERE dojo_id = 10;
+
+-- Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas
+WHERE dojo_id = 12;
+
+-- Query: Retrieve the last ninja's dojo
+SELECT dojo_id FROM ninjas
+WHERE id = 9;
+
+SELECT dojos.name FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 9;
+
+-- SOLUTIONS
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4;
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+	WHERE dojos.id = (SELECT id FROM dojos ORDER BY id DESC LIMIT 1);
+    
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);
