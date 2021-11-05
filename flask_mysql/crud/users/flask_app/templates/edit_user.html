@@ -8,22 +8,22 @@
     <title>Add a user!</title>
 </head>
 <body>
-    <h1>Add a New User</h1>
+    <h1>Update New User</h1>
     <div class="container-md">
-    <form action="/users/new" method="post">
+    <form action="/users/{{ user.id }}/update" method="post">
         <p>
             First Name
-            <input type="text" name="first_name" id="">
+            <input type="text" name="first_name" id="" value="{{ user.first_name }}">
         </p>
         <p>
             Last Name
-            <input type="text" name="last_name" id="">
+            <input type="text" name="last_name" id="" value="{{ user.last_name }}">
         </p>
         <p>
             Email
-            <input type="text" name="email" id="">
+            <input type="text" name="email" id="" value="{{ user.email }}">
         </p>
-        <button class="btn btn-secondary"> Add user!</button>
+        <button class="btn btn-secondary"> Update info!</button>
     </form>
 </div>
     <a href="/users">See all users</a>
