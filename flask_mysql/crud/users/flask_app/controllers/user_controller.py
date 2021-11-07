@@ -2,6 +2,7 @@ from flask import render_template, redirect, request
 from flask_app import app #inside flask app, dunder init app
 from flask_app.models.user import User #inside flask_app, into models, into user file, bringing in User class
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -14,18 +15,15 @@ def read_all():
     return render_template("users.html", all_users = all_users)
 
 #CREATE - RENDER
-@app.route("/users/create")
+@app.route("/users/create") #going forward, call this /new
 def new_user_form():
     return render_template("create.html")
 
 #CREATE - POST ROUTE
-@app.route("/users/new", methods = ["POST"])
+@app.route("/users/new", methods = ["POST"]) #going forward, call this /create
 def create_new_users():
-    print(request.form)
-    User.create(request.form)
-    
-    return redirect("/users")
-
+    user_id = User.create(request.form)
+    return redirect(f"/users/{user_id}")
 
 #READ ONE
 @app.route("/users/<int:user_id>")

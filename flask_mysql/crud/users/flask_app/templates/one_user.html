@@ -8,9 +8,9 @@
     <title>Single User</title>
 </head>
 <body>
-    <h1>Info for User {{ user.id }}</h1>
+    <h1>Info for {{ user.first_name }}{{ user.last_name }}</h1>
         <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-        <p>Last Name: {{user.last_name }}</p>
+        <p>Last Name: {{ user.last_name }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Created on: {{ user.created_at }}</p>
         <p>Last updated: {{ user.updated_at }}</p>
