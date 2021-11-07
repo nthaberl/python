@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ninja.first_name }}{{ ninja.last_name }}</title>
+</head>
+<body>
+    <h1>Update Info</h1>
+    <div class="container-md">
+    <form action="/ninjas/{{ ninja.id }}/update" method="post">
+        <p>
+            First Name
+            <input type="text" name="first_name" id="" value="{{ ninja.first_name }}">
+        </p>
+        <p>
+            Last Name
+            <input type="text" name="last_name" id="" value="{{ ninja.last_name }}">
+        </p>
+        <p>
+            Email
+            <input type="text" name="age" id="" value="{{ ninja.age }}">
+        </p>
+        <button class="btn btn-secondary"> Update info!</button>
+    </form>
+</div>
+    <a href="/dojos">Home</a>
+</body>
+</html>
