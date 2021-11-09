@@ -22,7 +22,7 @@ def new_dojo_form():
 
 #CREATE - POST ROUTE
 @app.route("/dojos/create", methods = ["POST"])
-def create_new_dojos():
+def create_new_dojo():
     print(request.form)
     Dojo.create(request.form)
     

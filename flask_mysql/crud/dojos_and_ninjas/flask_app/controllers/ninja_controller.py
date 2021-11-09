@@ -7,19 +7,20 @@ from flask_app.models.ninja import Ninja
 def new_ninja():
     return render_template("/ninjas/new_ninja.html", all_dojos = Dojo.get_all())
 
-# @app.route("/users/create") #going forward, call this /new
-# def new_user_form():
-#     return render_template("create.html")
+
 
 @app.route("/ninjas/create", methods = ["POST"])
 def create_ninja():
     print(request.form)
     Ninja.create(request.form)
-    # dojo_id = request.form['dojo_id']
-    # return redirect(f"/dojos/{dojo_id}")
-    return redirect ("/dojos")
+    dojo_id = request.form['dojo_id']
+    return redirect(f"/dojos/{dojo_id}") #routes back to dojo where ninja was created
+    # return redirect ("/dojos")
 
 
+# @app.route("/users/create") #going forward, call this /new
+# def new_user_form():
+#     return render_template("create.html")
 
 # #UPDATE - RENDER
 # @app.route("/ninjas/<int:ninja_id>/edit")
