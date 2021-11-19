@@ -1,10 +1,3 @@
-in filder folder, 
-pipenv install flask pymysql flask-bcrypt
+My Personal Hike Tracker
 
-in __init__
-// from flask import flask
-
-app = Flask(__name__)
-
-app.secret_key = "jinglejangle"
-
+A small little app to mark which hikes I've done onto a map with a brief description, utilizing the open source LEaflet API and making it pretty with UIKit CSS Framework.
