@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.3/dist/css/uikit.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>My Hike Map</title>
+</head>
+<body>
+    <div id="container" class="uk-background-muted">
+        <div><h1>Personal Hiking Map</h1></div>
+        <hr class="uk-divider-small">
+        <div id="hikeinfo">
+            <!-- container which holds map data -->
+            <div id ="map">
+            </div>
+            <div id="table">
+                <h3>Completed Trails</h3>
+                <table class="table uk-table uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>
+                                Trail Name
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="trails">
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- form which submits json to MySQL database -->
+        <div class="uk-card uk-card-body uk-card-default" id="form-card">
+            <form onsubmit="event.preventDefault(); handleSubmit();" class="uk-form-horizontal uk-margin-large">
+                <h3 class="uk-card-title">Hiked a new trail?</h3>
+                <h5>Add it to the map!</h5>
+                    <p>
+                        Trail Name:
+                            <input type="text" name="name" id="name" class="uk-input uk-form-width-large" oninput="setName(this);">
+                        </p>
+                <p>
+                    Description:
+                    <textarea name="description" id="description" class="uk-textarea uk-form-width-large" oninput="setDescription(this);"></textarea>
+                </p>
+                <p>
+                    Latitude:
+                    <input type="text" name="lat" id="lat" class="uk-input uk-form-width-large" oninput="setLat(this);">
+                </p>
+                <p>
+                    Longitude:
+                    <input type="text" name="lng" id="lng" class="uk-input uk-form-width-large" oninput="setLong(this);">
+                </p>
+                <button class="uk-button uk-button-default" id="button">Add Hike</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script src="static/js/script.js"></script>

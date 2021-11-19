@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+#hikeinfo {
+    display: flex;
+    padding: 40px;
+}
+
+#map{
+    width: 600px;
+    height: 400px;
+    margin-right: 20px;
+}
+
+#table{
+    width: 400px;
+    margin-left: 20px;
+
+}
+
+h3, h5{
+    text-align: center;
+}
+
+h5{
+    margin-top: -15px;
+}
+
+#button {
+    background-color: #579e6a;
+    color: whitesmoke;
+}
+
+#form-card{
+    width: 400px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    margin-left: 40px;
+}
+
+hr{
+    text-align: center;
+}
