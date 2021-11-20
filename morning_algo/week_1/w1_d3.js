@@ -27,7 +27,7 @@ function encodeStr(str) {
         //reset the count
         //set the currCharVariable to the next letter
     for(var i =0; i <str.length; i++){
-        if(str.charAt(i+1)== str.charAt(i)){ 
+        if(str.charAt(i+1) == str.charAt(i)){ 
             count += 1;
         }
         else{
@@ -53,8 +53,11 @@ console.log(encodeStr(str2))
 console.log(encodeStr(str3))
 console.log(encodeStr(str4))
 
-const str1 = "a3b2c12d10"
-const expected = "aaabbccccccccccccdddddddddd"
+const str5 = "a3b2c12d10"
+const expected5 = "aaabbccccccccccccdddddddddd"
+
+
+// FIX THIS CODE
 function decodeStr(str) {
     //SETUP
     //decoded string variable
@@ -80,4 +83,4 @@ while (i < str.length) {
 return decoded
 }
 
-
+console.log(decodeStr(str5))

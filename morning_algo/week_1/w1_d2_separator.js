@@ -5,9 +5,9 @@
   Default the separator to a comma with a space after it if no separator is provided
 */
 
-// const arr1 = [1, 2, 3];
-// const separator1 = ", ";
-// const expected1 = "1, 2, 3";
+const arr1 = [1, 2, 3];
+const separator1 = ", ";
+const expected1 = "1, 2, 3";
 
 const arr2 = [1, 2, 3];
 const separator2 = "-";
@@ -36,7 +36,7 @@ const expected5 = "";
 
 function join(arr, sep) {
     // SETUP
-        var newString = " "
+        var newString = "";
     // variable that holds the new string we are going to build
     
     // WORK
@@ -44,7 +44,7 @@ function join(arr, sep) {
         newString += arr[i] + sep;
     }
         newString += arr[arr.length-1];
-    return newString;
+
         
     // loop through the array to the second to last element
         // get the value from the array
@@ -54,9 +54,14 @@ function join(arr, sep) {
     
     // RETURN
     // return the new string
+    return newString;
     }
     
+    console.log(join (arr1, separator1))
     console.log(join (arr2, separator2))
+    console.log(join (arr3, separator3))
+    console.log(join (arr4, separator4))
+    console.log(join (arr5, separator5))
 /*****************************************************************************/
 
 /* 
@@ -65,8 +70,8 @@ Given an array of ints representing page numbers
 return a string with the page numbers formatted as page ranges when the nums span a consecutive range
 */
 
-const nums1 = [1, 13, 14, 15, 37, 38, 70];
-const expected1 = "1, 13-15, 37-38, 70";
+const nums6 = [1, 13, 14, 15, 37, 38, 70];
+const expected6 = "1, 13-15, 37-38, 70";
 
 /**
  * Turns the given arr of page numbers into a string of comma hyphenated
@@ -113,5 +118,5 @@ function bookIndex(nums) {
   // return that new string
     return newString
 }
-
-console.log(bookIndex(nums1))
+}
+console.log(bookIndex(nums6))

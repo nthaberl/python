@@ -11,6 +11,8 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected = "LFNYISN";
 
+
+//FIX THIS CODE
 function acronymize(str){
     //SETUP
     var acronym = "";
@@ -29,6 +31,21 @@ function acronymize(str){
 
 console.log(acronymize(str1));
 
+function acronymize(str) {
+    //SETUP
+    str.split(" ");
+    var result = ''
+    //WORK
+    for( var i =0; i < str.split(' ').length; i++){
+        result+=str.split(' ')[i].charAt(0).toUpperCase()
+        //RETURN
+    } return result
+        
+
+}
+console.log(acronymize(str1))
+console.log(acronymize(str2))
+
 acronymize(" there's no free lunch - gotta pay yer way.")
 // ******************************************
 
@@ -36,11 +53,11 @@ acronymize(" there's no free lunch - gotta pay yer way.")
 // given a string,
 // return a new string that is the given string reversed
 
-const str1 = "creature";
-const expected1 = "erutaerc";
+const str3 = "creature";
+const expected3 = "erutaerc";
 
-const str2 = "dog";
-const expected2 = "god";
+const str4 = "dog";
+const expected4 = "god";
 
 function reverseString(str) {
 let reversed = "";
@@ -51,3 +68,6 @@ for (let i = str.length - 1; i >= 0; i--) {
 
 return reversed;
 }
+
+console.log(str3)
+console.log(str4)
