@@ -36,7 +36,7 @@
             <label for="yes">Yes</label>
             <input type="radio" name="under_30" id="" value="no">
             <label for="no">No</label>
-            {% else %}
+            {% endif %}
             {% if recipe.under_30 == "no" %}
             <input type="radio" name="under_30" value="yes" id="">
             <label for="yes">Yes</label>
