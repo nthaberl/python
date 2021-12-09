@@ -11,12 +11,23 @@ def index():
 @app.route("/process", methods = ["POST"])
 def process():
     print(request.form)
+    # session['vehicle'] = []
+    # if request.form['vehicle']:
+    #     session['vehicle'].append(request.form['vehicle'])
+    # else:
+    #     session['vehicle'] = request.form['vehicle']
+    # if request.form.getlist('vehicle1') == True:
+    #     session['vehicle'].append(request.form['vehicle1'])
+    # if request.form.getlist('vehicle2') == True:
+    #     session['vehicle'].append(request.form['vehicle2'])
+    # if request.form.getlist('vehicle3') == True:
+    #     session['vehicle'].append(request.form['vehicle3'])
     session['name'] = request.form ['name']
     session['location'] = request.form['location']
     session['language'] = request.form['language']
-    session['vehicle'] = request.form.get('vehicle')
+    session['vehicle'] = request.form.getlist('vehicle')
     session['comment'] = request.form['comment']
-
+    print(session['vehicle'])
     return redirect("/result")
 
 @app.route("/result")

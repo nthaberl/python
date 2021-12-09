@@ -1,0 +1,1 @@
+Example showcasing how to use Flask before application is connected to a database

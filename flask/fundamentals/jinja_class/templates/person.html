@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# this is a jinja comment: below is our new Jinja file #}
+    <title>{{ name }} Page</title>
+</head>
+<body>
+    <h1>This is {{ name }}'s page</h1>
+    <ul>
+        {% for friend in friends %}
+        {% if friend !== "Shawn"}
+            <li>{{ friend }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
