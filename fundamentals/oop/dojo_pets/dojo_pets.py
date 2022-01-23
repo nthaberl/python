@@ -62,7 +62,7 @@ Natascha = Ninja("Natascha", "H", "anchovies", "salmon", Tofu)
 Emil = Ninja("Emil", "Ny", "yogurt", "chicken", Taro)
 
 Natascha.walk()
-# Natascha.bathe()
+Natascha.bathe()
 # print("Current Health:", Tofu.health)
 # Emil.feed()
 # print("Health:", Taro.health, "Energy", Taro.energy)
