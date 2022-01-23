@@ -43,4 +43,4 @@ account2 = BankAccount(.01, 0)
 account1.deposit(50).deposit(50).deposit(50).withdraw(100).yield_interest().display_account_info()
 account2.withdraw(50).display_account_info()
 
-BankAccount.accounts()
+# BankAccount.accounts()
